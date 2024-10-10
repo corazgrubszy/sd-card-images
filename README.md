@@ -13,7 +13,7 @@ The generated SD card images are made up of two separate images:
 * **boot-BOARD.bin**: Boot image that contains partition table, U-Boot and chip-specific code. The boot image will only work on the board it's built for. The filename indicates which board it's built for.
 * **debian-ARCH-VERSION-PASSWORD.bin**: Debian ext4 root filesystem image that contains a complete Debian installation, including kernel, initrd and device tree. This Debian image is generic and will work on all chips and boards with the CPU architecture it's built for. The filename indicates Debian version, CPU architecture and default root password.
 
-These two images are the concatenated to a single image, which is then written to SD card, for example like this:
+These two images are then concatenated to a single image, which is then written to SD card, for example like this:
 
     $ zcat boot-raspberrypi_3b.bin.gz debian-buster-arm64-XXXXXX.bin.gz > sd-card.img
     # dd if=sd-card.img of=/dev/sdXXX
